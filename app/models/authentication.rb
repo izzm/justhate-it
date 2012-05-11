@@ -36,20 +36,9 @@ protected
   end
   
   def post_to_facebook(message)
-    me = FbGraph::User.me(self.tokens[:access_token])
-    me.feed!(
-      :message => message,
-      #:picture => 'https://graph.facebook.com/matake/picture',
-      :link => root_url,
-      #:name => 'FbGraph',
-      #:description => 'A Ruby wrapper for Facebook Graph API'
-    )
+    root_url = Rails.application.routes.url_helpers.root_url
+    result = self.access_token.post("https://graph.facebook.com/me/feed", {:message => message, :link => root_url})
     
-    #result = self.access_token.post("https://graph.facebook.com/me/feed", {
-    #  :message => message,
-    #  :link => root_url
-    #})
-    
-    #ActiveRecord::Base.logger.info "Twitter post result (#{result.code}): #{result.body}"
+    ActiveRecord::Base.logger.info "Facebook post result (#{result.code}): #{result.body}"
   end
 end

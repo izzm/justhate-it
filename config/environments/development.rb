@@ -34,4 +34,6 @@ JusthateIt::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  
+  config.default_url_options[:host] = '127.0.0.1:3000'
 end

@@ -42,13 +42,16 @@ class User < ActiveRecord::Base
   end
 
 private
-  def apply_omniauth_facebook(omniauth)
-    self.email = omniauth['user_info']['email'] if email.blank?    
+  def apply_omniauth_facebook(omniauth)    
+    self.email = omniauth['info']['email'] if email.blank?
+    self.name = omniauth['info']['name'] if name.blank?
+    
+    avatar_from_url omniauth['info']['image']    
   end
   
   def apply_omniauth_twitter(omniauth)
-    self.name = omniauth['info']['name']
-    self.nickname = omniauth['info']['nickname']
+    self.name = omniauth['info']['name'] if name.blank?
+    self.nickname = omniauth['info']['nickname'] if nickname.blank?
     
     avatar_from_url omniauth['info']['image']
   end
