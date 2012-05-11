@@ -33,7 +33,7 @@ JusthateIt::Application.configure do
   config.assets.compress = false
 
   # Expands the lines which load the assets
-  config.assets.debug = true
-  
-  config.default_url_options[:host] = '127.0.0.1:3000'
+  config.assets.debug = true  
 end
+
+Rails.application.routes.default_url_options[:host]= 'localhost:3000'
