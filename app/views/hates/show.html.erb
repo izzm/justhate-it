@@ -1,0 +1,20 @@
+<% title "Hate" %>
+
+<p>
+  <strong>User:</strong>
+  <%= @hate.user %>
+</p>
+<p>
+  <strong>Subject:</strong>
+  <%= @hate.subject %>
+</p>
+<p>
+  <strong>Because:</strong>
+  <%= @hate.because %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_hate_path(@hate) %> |
+  <%= link_to "Destroy", @hate, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", hates_path %>
+</p>

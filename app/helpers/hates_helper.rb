@@ -1,0 +1,2 @@
+module HatesHelper
+end

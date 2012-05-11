@@ -1,0 +1,12 @@
+<%= form_for @hate do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :subject %><br />
+    <%= f.text_field :subject_name %>
+  </p>
+  <p>
+    <%= f.label :because %><br />
+    <%= f.text_field :because %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

@@ -1,0 +1,16 @@
+<% title "Hates" %>
+
+<table>
+  <tr>
+    <th></th>
+  </tr>
+  <% for hate in @hates %>
+    <tr>
+      <td><%= hate.build_message %></td>
+
+      <td><%= link_to "Destroy", hate, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Hate", new_hate_path %></p>
