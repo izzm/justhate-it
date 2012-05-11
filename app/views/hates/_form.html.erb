@@ -1,12 +1,13 @@
-<%= form_for @hate do |f| %>
-  <%= f.error_messages %>
-  <p>
-    <%= f.label :subject %><br />
-    <%= f.text_field :subject_name %>
-  </p>
-  <p>
-    <%= f.label :because %><br />
-    <%= f.text_field :because %>
-  </p>
-  <p><%= f.submit %></p>
-<% end %>
+<div class="send_form">
+	<%= image_tag "logo.png", :id => "logo" %>
+	<%= form_for @hate do |f| %>
+    <%= f.error_messages %>
+    
+    <%= f.text_field :subject_name, :id => 'what', :autocomplete => 'off' %>
+    
+    <div id="because_lbl">because</div>
+    <%= f.text_field :because, :id => 'because', :autocomplete => 'off' %>
+    
+    <%= f.submit :id => 'hate_submit', :value => "hate it" %>
+  <% end %>  
+</div>

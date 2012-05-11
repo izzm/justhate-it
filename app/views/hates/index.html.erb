@@ -1,16 +1,13 @@
-<% title "Hates" %>
+<% title "Just HATE it" %>
 
-<table>
-  <tr>
-    <th></th>
-  </tr>
-  <% for hate in @hates %>
-    <tr>
-      <td><%= hate.build_message %></td>
+<%= render :partial => 'form' %>
 
-      <td><%= link_to "Destroy", hate, :confirm => 'Are you sure?', :method => :delete %></td>
-    </tr>
-  <% end %>
-</table>
-
-<p><%= link_to "New Hate", new_hate_path %></p>
+<div class="posts">
+  <div class="head">See what people hate right now</div>
+	
+	<%= render :partial => 'hate', :collection => @hates %>
+	
+	<% 
+	 #link_to "Destroy", hate, :confirm => 'Are you sure?', :method => :delete 
+	%>
+</div>

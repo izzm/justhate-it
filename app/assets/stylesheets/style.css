@@ -1,0 +1,328 @@
+body
+{
+	background-image: url(/assets/bg.jpg);
+}
+header
+{
+	height:80px;
+	text-align:center;
+	font-size:40px;
+	color:#989898;
+	text-shadow:  -1px -1px 0px #444;
+	
+}
+
+.container{
+	width:960px;
+	margin: 0px auto;
+}
+/* MAIN SEND FORM */
+.send_form{
+	border-radius:10px;
+	background-color: RGBA(255,255,255,0.3);
+	border: solid RGBA(255,255,255,0.5) 1px;
+	width:900px;
+	height:270px;
+	padding: 30px;
+}
+
+.send_form #logo, .topic .logo{
+width:405px;
+height:84px;
+margin: 0px auto;
+display:block;
+}
+.send_form form
+{
+	margin-top:20px;
+}
+
+.send_form #what
+{
+	border-radius:10px 10px 0px 0px;
+	border:none;
+  width: 898px;
+	font-size:50px;
+	text-align:center;
+	border-bottom: dashed #222 1px;
+	color: #989898;
+}
+
+send_form #what:focus{
+	border:none;
+	outline:none;
+}
+
+.send_form #because_lbl
+{
+	width:200px;
+	float:left;
+	height:61px;
+	background-color: white;
+	border-radius:0px 0px 0px 10px;
+	color: #84cb2a;
+	text-align:center;
+	font-size:40px;
+	font-family: 'Neon80sRegular';
+}
+
+.send_form #because
+{
+	border-radius:0px 0px 10px 0px;
+	border:none;
+	width:700px;
+	float:right;
+	font-size:50px;
+	text-align:center;
+	color: #989898;
+	padding: 0px;
+  margin: 0px;
+  height: 61px;
+}
+
+.send_form #hate_submit{
+	margin-top:10px;
+	float:right;
+	background-color: #25aae2;
+	border-radius: 10px;
+	border:none;
+	width:120px;
+	height:50px;
+	text-align:center;
+	color:white;
+	font-size:30px;
+	font-family: 'Neon80sRegular';
+}
+
+.send_form #hate_submit:hover{
+	background-color: #40b1e1;
+}
+
+
+/* post */
+.posts{
+	margin-top:30px;
+}
+
+.posts .head{
+	color:white;
+	text-align:center;
+	text-shadow:  1px 1px 2px #444;
+	font-size:30px;
+	margin-bottom:10px;
+}
+
+.post{
+	background-color:white;
+	font-family: 'RobotoRegular';
+	color:#999999;
+	border-radius:10px;
+	width:920px;
+	padding: 10px 20px;
+	margin-top:20px;
+	min-height:90px;
+}
+
+.post .like_small{
+	background-image: url(/assets/likes.png);
+	background-repeat: no-repeat;
+    background-position: left, bottom;
+	height: 16px;
+	font-size:16px;
+	padding-left:24px;
+	line-height:16px;
+	width: 40px;
+	float:left;
+	color:#999999;
+	font-family: 'RobotoBold';
+}
+
+.post .comments_small{
+	background-image: url(/assets/comments.png);
+	background-repeat: no-repeat;
+    background-position: left, bottom;
+	height: 16px;
+	font-size:16px;
+	padding-left:24px;
+	line-height:16px;
+	width: 40px;
+	float:left;
+	color:#999999;
+	font-family: 'RobotoBold';
+}
+
+.post .author
+{
+	float:right;
+	line-height:16px;
+}
+
+.post .author a
+{
+	line-height:16px;
+	font-size:16px;
+	color:#444;
+	font-family: 'RobotoRegular';
+	text-decoration: underline;
+	line-height:16px;
+}
+
+.post .author a:hover
+{
+	line-height:16px;
+	color:#999;
+	
+	text-decoration: underline;
+}
+
+
+
+.post .ihate, .post .because
+{
+	font-size: 20px;
+	float: none;
+	
+	
+}
+
+.post .ihate{
+margin-top:10px;
+}
+
+.post .ihate span
+{
+	color: #25aae2;
+}
+
+.post .because span
+{
+	color: #444;
+}
+
+
+/*------- TOPIC ---------------*/
+.hate-info
+{
+	border-radius:10px;
+	background-color: RGBA(255,255,255,0.3);
+	border: solid RGBA(255,255,255,0.5) 1px;
+	width:900px;
+	height:50px;
+	padding: 20px ;
+	font-family: 'RobotoRegular';
+}
+
+.hate-info .count
+{
+	float:left;
+	font-size:50px;
+	line-height:50px;
+	font-family: 'RobotoThin';
+	width: 200px;
+}
+
+.hate-info .text{
+	float:left;
+	font-size:50px;
+	line-height:50px;
+	text-align:center;
+	width:560px;
+	color: #25aae2;
+}
+
+.hate-info button{
+	
+	float:right;
+	background-color: #25aae2;
+	border-radius: 10px;
+	border:none;
+	width:120px;
+	height:50px;
+	text-align:center;
+	color:white;
+	font-size:30px;
+	font-family: 'Neon80sRegular';
+}
+
+.hate-info button:hover{
+background-color: #40b1e1;
+}
+
+.topic .posts
+{
+	border-radius:10px;
+	background-color: RGBA(255,255,255,0.3);
+	border: solid RGBA(255,255,255,0.5) 1px;
+	width:920px;
+	padding: 20px;
+}
+
+.topic .post
+{
+	width: 880px;
+	box-shadow: 5px 5px 5px #999;
+}
+
+.topic .post-selected
+{
+	width: 880px;
+	
+	border: solid #99cf56 3px;
+}
+
+.topic header{
+	height:90px;
+	margin-top: 20px;
+	margin-bottom:20px;
+}
+
+
+
+.topic .posts-head #head-because
+{
+	
+	float:left;
+	color: #84cb2a;
+	
+	font-family: 'Neon80sRegular';
+}
+
+.topic .posts-head #head-choose
+{
+	font-family: 'RobotoRegular';
+	float:right;
+	font-size:20px;
+}
+
+.topic .posts-head #head-choose
+{
+	font-family: 'RobotoRegular';
+	float:right;
+	font-size:20px;
+	color: #999;
+}
+
+.topic .posts-head #head-choose a, .topic .posts-head #head-choose a:visited
+{color: #444}
+.topic .posts-head #head-choose a:hover
+{
+	color:#999
+}
+
+
+.topic .posts-head
+{
+	text-shadow:none;
+	width:100%;
+	
+	font-size:20px;
+	height:20px;
+	margin-bottom:10px;
+}
+
+footer {
+  padding: 20px;
+  text-align: center  ;
+  color: #777;
+  
+}

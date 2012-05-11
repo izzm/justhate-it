@@ -1,0 +1,12 @@
+<div class="post">
+	<div class="like_small">123</div>
+	<div class="comments_small">123</div>
+	<div class="author">
+	  <%= link_to hate.user_name %>
+	</div>
+	<div class="clearfix"> </div>
+	<div class="ihate">I hate <span><%= hate.subject_name %></span></div>
+  <% unless hate.because.blank? -%>
+	  <div class="because">because <span><%= hate.because %></span></div>
+	<% end -%>
+</div>
