@@ -15,7 +15,7 @@ class Authentication < ActiveRecord::Base
   end
   
   def update_token(omniauth)
-    self.access_token = omniauth['extra']['access_token']
+    send("update_#{self.provider}_token", omniauth)
   end
   
   def upadte_tokens!(omniauth)
@@ -28,6 +28,14 @@ class Authentication < ActiveRecord::Base
   end
   
 protected
+  def update_twitter_token(omniauth)
+    self.access_token = omniauth['extra']['access_token']    
+  end
+  
+  def update_facebook_token(omniauth)
+    self.access_token = omniauth['credentials']['token']
+  end
+  
   def post_to_twitter(message)
     tweet = message[0..(140-TWITTER_TAG.length)] + TWITTER_TAG
     result = self.access_token.post("http://api.twitter.com/1/statuses/update.json", {:status => tweet})
@@ -37,7 +45,15 @@ protected
   
   def post_to_facebook(message)
     root_url = Rails.application.routes.url_helpers.root_url
-    result = self.access_token.post("https://graph.facebook.com/me/feed", {:message => message, :link => root_url})
+        
+    me = FbGraph::User.me(self.access_token)
+    me.feed!(
+      :message => message,
+      #:picture => 'https://graph.facebook.com/matake/picture',
+      :link => root_url,
+      #:name => 'FbGraph',
+      #:description => 'A Ruby wrapper for Facebook Graph API'
+    )
     
     ActiveRecord::Base.logger.info "Facebook post result (#{result.code}): #{result.body}"
   end
