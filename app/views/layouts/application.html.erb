@@ -37,19 +37,20 @@
     <% end %>
     <%= content_tag :h1, yield(:title) if show_title? %>
   -->
+  
+    <div id="user_nav">
+      <% if user_signed_in? %>
+        <%= image_tag current_user.avatar.url(:small) %>
+        Signed in as <%= current_user.name %> (<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>).
+      <% else %>
+        <%= link_to "Sign In", authentications_path %>
+      <% end %>
+    </div>
 	  
 		<header>
 			Start hating with us
 		</header>
 		<div role="main">
-		  <div id="user_nav">
-        <% if user_signed_in? %>
-          <%= image_tag current_user.avatar.url(:small) %>
-          Signed in as <%= current_user.name %> (<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>).
-        <% else %>
-          <%= link_to "Sign In", authentications_path %>
-        <% end %>
-      </div>
 
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
